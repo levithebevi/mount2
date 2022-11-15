@@ -1,2 +1,2 @@
-# writeperm
-A cli utility for changing a users write permissions for a filesystem written in C.
+# mount2
+Mount2 is a cli tool that acts as a front-end for the mount command with more information and user friendliness.
