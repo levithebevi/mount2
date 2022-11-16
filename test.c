@@ -8,11 +8,14 @@ int main( )
 
 	char answer;
 	char drive[30];
-	char mount[30] = "sudo mount";
+	char mount[30] = "sudo mount ";
+	char mountpoint[15] = " /mountpoint";
 
 	system( "lsblk" );
 	printf( "What drive would you like to mount?: " );
 	gets( drive );
+	strcat( mount,drive );
+	strcat( mount,mountpoint );
 
 	printf( "\nYou typed: " );
 	puts( drive );
@@ -23,22 +26,27 @@ int main( )
 	printf( "\nSelected %c\n", answer );
 	
 	if ( answer == 'Y' )
-	
+		
 {
 
-		printf( "Initializing ..." );
-		strcat( mount, drive );
-		printf( " Mounting ... " );
-		system( drive );
+		system( "sudo mkdir /mountpoint" );
+		system( mount );
 
-		return 0;
+	return 0;
 
 }
-	else 
+	else if ( answer == 'y' )
 {	
-	printf( "Aborted!" );
+
+		system( "sudo mkdir /mountpoint" );
+		system( mount );
+		
+	return 0;
 	
-	return 0;
 }
-	return 0;
+	else
+{
+return 0;
+}
+return 0;
 }
