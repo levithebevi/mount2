@@ -1,30 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main( )
-{
-	char filesystem[15];
-	char answer;
+#include <string.h>
 
-	printf( "Enter the filesystem you would like to change write permissions too: " );
-	gets( filesystem );
+int main( )
+
+{
+
+	char answer;
+	char drive[30];
+	char mount[30] = "sudo mount";
+
+	system( "lsblk" );
+	printf( "What drive would you like to mount?: " );
+	gets( drive );
 
 	printf( "\nYou typed: " );
-	puts( filesystem );
+	puts( drive );
 
-	printf( "\nAre you sure you want to use this filesystem? (Y/N) " );
+	printf( "\nAre you sure you want to mount this? (Y/N) " );
 	
-	scanf(" %c", &answer);
-	printf("\n Selected %c\n", answer);
-	if (answer == 'Y')
-	{
-		printf( "Success!" );
-		strcpy( filesystem, filesystem );
-		system( ls, &&filesystem );
-	}
-	else 
-	{	
-	printf( "Aborted!" );
+	scanf( " %c", &answer );
+	printf( "\nSelected %c\n", answer );
+	
+	if ( answer == 'Y' )
+	
+{
+
+		printf( "Initializing ..." );
+		strcat( mount, drive );
+		printf( " Mounting ... " );
+		system( drive );
+
 		return 0;
+
+}
+	else 
+{	
+	printf( "Aborted!" );
+	
+	return 0;
 }
 	return 0;
 }
