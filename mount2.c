@@ -2,15 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main( int argc, char** argv ) {
+int main( int argc,char *argv[] ) {
 
+	int i;
 	char answer;
 	char drive[30];
 	char mount[30] = "sudo mount ";
 	char mountpoint[30] = " /mountpoint";
-	
-if( argv = "--path" )
-{
+
+if( argc > 2 ) {
+
 	printf( "Type the path you would like to mount the drive in. (Putting a space after the : is required.):");
 	gets( mountpoint );
 
@@ -28,9 +29,7 @@ if( argv = "--path" )
 	scanf( " %c", &answer );
 	printf( "\nSelected %c\n", answer );
 	
-	if ( answer == 'Y' )
-		
-	{
+	if ( answer == 'Y' ) {
 
 		system( mount );
 
@@ -47,16 +46,13 @@ if( argv = "--path" )
 	return 0;
 	
 	}
-		else
-	{
+		else {
 		printf( "Aborted!" );
 		return 0;
 	}
 }
 
-else
-
-{
+else {
 
 printf( "Warning: Path not specified, mounting in /mountpoint by default." );
 
@@ -84,8 +80,7 @@ printf( "Warning: Path not specified, mounting in /mountpoint by default." );
 	return 0;
 
 }
-	else if ( answer == 'y' )
-{	
+	else if ( answer == 'y' ) {	
 
 		system( "sudo mkdir /mountpoint" );
 		system( mount );
@@ -93,8 +88,8 @@ printf( "Warning: Path not specified, mounting in /mountpoint by default." );
 	return 0;
 	
 	}
-		else
-	{
+		else {
+		
 		printf( "Aborted!" );
 		return 0;
 	}
