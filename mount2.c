@@ -10,7 +10,7 @@ int main( int argc,char *argv[] ) {
 	char mount[30] = "sudo mount ";
 	char mountpoint[30] = " /mountpoint";
 
-if( argc > 2 ) {
+if( argc > 1 ) {
 
 	printf( "Type the path you would like to mount the drive in. (Putting a space after the : is required.):");
 	gets( mountpoint );
